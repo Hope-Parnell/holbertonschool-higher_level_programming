@@ -1,0 +1,65 @@
+========================
+0-add_integer test file
+========================
+
+This module adds two integers together, using ''add_integer()''
+
+Numbers
+=========
+''add_integer()'' returns the sum of its arguments.
+
+::
+  >>> add_integer = __import__('0-add_integer').add_integer
+  >>> add_integer(4, 7)
+  11
+
+Should cast floats to integers
+
+  ::
+    >>> add_integer(3.4, 5)
+    8
+
+  ::
+    >>> add_integer(5, 4.5)
+    9
+
+  ::
+    >>> add_integer(2.0, 3.0)
+    5
+
+Negative numbers should not impact this function
+
+  ::
+    >>> add_integer(-4, -2)
+    -6
+
+  ::
+	>>> add_integer(-3, 2)
+	-1
+
+  ::
+	>>> add_integer(2, -1)
+	1
+
+Non-Numbers
+=============
+::
+  >>> add_integer = __import__('0-add_integer').add_integer
+  >>> add_integer("bob", 7)
+  Traceback (most recent call last):
+  ...
+  TypeError: a must be an integer
+
+::
+  >>> add_integer(7, "ross")
+  Traceback (most recent call last):
+  ...
+  TypeError: b must be an integer
+
+Incorrect Number of Input
+==========================
+::
+  >>> add_integer()
+  Traceback (most recent call last):
+  ...
+  TypeError: add_integer() missing 1 required positional argument: 'a'
