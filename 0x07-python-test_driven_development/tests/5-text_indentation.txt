@@ -1,0 +1,48 @@
+=========================
+5-text_indentation tests
+=========================
+
+This module inserts newlines into a string
+
+Proper cases
+===============
+simple test:
+::
+  >>> text_indentation = __import__('5-text_indentation').text_indentation
+  >>> text_indentation("Who: Are. You?")
+  Who:
+  <BLANKLINE>
+  Are.
+  <BLANKLINE>
+  You?
+
+space at beginning and newline in string
+::
+  >>> text_indentation(" Hello:\n Person")
+  Hello:
+  <BLANKLINE>
+  <BLANKLINE>
+  Person
+
+spaces in middle of string and no separators
+::
+  >>> text_indentation("For     Honor!")
+  For     Honor!
+
+testing special character in middle of excess space
+::
+  >>> text_indentation("I   :   love: tacos")
+  I   :
+  <BLANKLINE>
+  love:
+  <BLANKLINE>
+  tacos
+  
+Improper case
+===============
+text is not a string
+::
+  >>> text_indentation(4.5)
+  Traceback (most recent call last):
+  ...
+  TypeError: text must be a string
