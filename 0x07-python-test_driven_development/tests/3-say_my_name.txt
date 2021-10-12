@@ -1,0 +1,36 @@
+========================
+3-say_my_name test file
+========================
+
+This module prints out a name
+
+Proper cases
+==============
+
+first and last name provided
+::
+  >>> say_my_name = __import__('3-say_my_name').say_my_name
+  >>> say_my_name("Hope", "Parnell")
+  My name is Hope Parnell
+
+only first name provided
+::
+  >>> say_my_name("Hope")
+  My name is Hope 
+
+Improper cases
+================
+first_name is not a string
+::
+  >>> say_my_name(5.0, "five")
+  Traceback (most recent call last):
+  ...
+  TypeError: first_name must be a string
+
+last_name is not a string
+::
+    >>> say_my_name("James", 0.07)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+

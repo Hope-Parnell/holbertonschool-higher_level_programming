@@ -1,0 +1,42 @@
+=========================
+4-print_square test file
+=========================
+This module prints a square
+
+Proper cases
+==============
+Prints a square of any size
+::
+  >>> print_square = __import__('4-print_square').print_square
+  >>> print_square(4)
+  ####
+  ####
+  ####
+  ####
+
+size 0 prints nothing
+::
+  >>> print_square(0)
+
+Improper cases
+================
+size not integer
+::
+  >>> print_square("Two")
+  Traceback (most recent call last):
+  ...
+  TypeError: size must be an integer
+
+negative size
+::
+  >>> print_square(-7)
+  Traceback (most recent call last):
+  ...
+  ValueError: size must be >= 0
+
+size is a negative float
+::
+  >>> print_square(-2.3)
+  Traceback (most recent call last):
+  ...
+  TypeError: size must be an integer
