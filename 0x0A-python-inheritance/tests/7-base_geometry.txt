@@ -13,10 +13,6 @@ value is int
   >>> bg = BaseGeometry()
   >>> bg.integer_validator("value", 7)
 
-value is 0
-::
-  >>> bg.integer_validator("value", 0)
-
 ==================
 Exceptions Raised
 ==================
@@ -80,9 +76,14 @@ Raises TypeError when value is not an int
   ...
   TypeError: type must be an integer
 
-Raises ValueError when value is an int but is less than 0
+Raises ValueError when value is an int but is <= 0
 ::
   >>> bg.integer_validator("value", -5)
+  Traceback (most recent call last):
+  ...
+  ValueError: value must be greater than 0
+
+  >>> bg.integer_validator("value", 0)
   Traceback (most recent call last):
   ...
   ValueError: value must be greater than 0
