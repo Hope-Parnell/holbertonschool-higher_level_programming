@@ -3,9 +3,9 @@
 
 
 def lookup(obj):
-    """Function returns the list of available attributes and 
+    """Function returns the list of available attributes and
     methods of an object
-    
+
     Arg:
         obj(object): the object to be searched
     """
