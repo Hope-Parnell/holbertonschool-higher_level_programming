@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""This module contains a rectangle class that inherits
-from BaseGeometry
+"""This module contains a rectangle class that inherits BaseGeometry
 """
 
 
