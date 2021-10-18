@@ -63,7 +63,7 @@ class Rectangle(Base):
         return self.__height
 
     @height.setter
-    def width(self, value):
+    def height(self, value):
         """sets the height of the rectangle
 
         Arg:
@@ -90,7 +90,7 @@ class Rectangle(Base):
         """getter for y"""
         return self.__y
 
-    @x.setter
+    @y.setter
     def y(self, value):
         """sets the y of the rectangle
 
@@ -99,12 +99,35 @@ class Rectangle(Base):
         """
         self.__y = value
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """updates the rectangle's attributes
 
         Arg:
-            args: list of new attributes [id, width, height, x, y]"""
-
+            args: list of new attributes [id, width, height, x, y]
+        """
+        i = len(args)
+        if i > 0:
+            if i >= 1:
+                self.id = args[0]
+            if i >= 2:
+                self.width = args[1]
+            if i >= 3:
+                self.height = args[2]
+            if i >= 4:
+                self.x = args[3]
+            if i >= 5:
+                self.y = args[4]
+        else:
+            if 'id' in kwargs:
+                self.id = kwargs['id']
+            if 'width' in kwargs:
+                self.width = kwargs['width']
+            if 'height' in kwargs:
+                self.height = kwargs['height']
+            if 'x' in kwargs:
+                self.x = kwargs['x']
+            if 'y' in kwargs:
+                self.y = kwargs['y']
 
     def area(self):
         """gives the area of a rectangle"""
