@@ -25,3 +25,18 @@ class TestBase(unittest.TestCase):
         self.assertEqual(base6.id, -5)
         base7 = Base(43)
         self.assertEqual(base7.id, 43)
+        base7.id = 7
+        self.assertEqual(base7.id, 7)
+
+    def test_to_json_string(self):
+        """tests to_json_string function"""
+        list_dict = [{'id': 8}, {'id': None}, {'id': 358}, {'id': -16}]
+        self.assertEqual(Base.to_json_string(list_dict),
+                         '[{"id": 8}, {"id": null}, {"id": 358}, {"id": -16}]')
+
+    def test_from_json_string(self):
+        """tests the from_json_string function"""
+        test_json = Base.to_json_string(
+            [{'id': 8}, {'id': None}, {'id': 358}, {'id': -16}])
+        self.assertEqual(Base.from_json_string(test_json),
+                         [{"id": 8}, {"id": None}, {"id": 358}, {"id": -16}])
