@@ -33,9 +33,9 @@ class Rectangle(Base):
             raise ValueError("x must be >= 0")
 
         if type(y) is not int:
-            raise TypeError("x must be an integer")
+            raise TypeError("y must be an integer")
         if y < 0:
-            raise ValueError("x must be >= 0")
+            raise ValueError("y must be >= 0")
 
         super().__init__(id)
         self.__width = width
@@ -55,6 +55,10 @@ class Rectangle(Base):
         Arg:
             value: new width for the rectangle
         """
+        if type(value) is not int:
+            raise TypeError("width must be an integer")
+        if value < 0:
+            raise ValueError("width must be > 0")
         self.__width = value
 
     @property
@@ -69,6 +73,10 @@ class Rectangle(Base):
         Arg:
             value: new height for the rectangle
         """
+        if type(value) is not int:
+            raise TypeError("height must be an integer")
+        if value < 0:
+            raise ValueError("height must be > 0")
         self.__height = value
 
     @property
@@ -83,6 +91,10 @@ class Rectangle(Base):
         Arg:
             value: new x for the rectangle
         """
+        if type(value) is not int:
+            raise TypeError("x must be an integer")
+        if value < 0:
+            raise ValueError("x must be >= 0")
         self.__x = value
 
     @property
@@ -97,6 +109,10 @@ class Rectangle(Base):
         Arg:
             value: new y for the rectangle
         """
+        if type(value) is not int:
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
         self.__y = value
 
     def update(self, *args, **kwargs):
@@ -140,5 +156,6 @@ class Rectangle(Base):
             print(" " * self.y + "#" * self.width)
 
     def __str__(self):
+        """string representation of Rectangle"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.x, self.y, self.width, self.height)
