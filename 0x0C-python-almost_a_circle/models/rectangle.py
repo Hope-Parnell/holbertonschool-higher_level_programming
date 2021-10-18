@@ -99,6 +99,13 @@ class Rectangle(Base):
         """
         self.__y = value
 
+    def update(self, *args):
+        """updates the rectangle's attributes
+
+        Arg:
+            args: list of new attributes [id, width, height, x, y]"""
+
+
     def area(self):
         """gives the area of a rectangle"""
         return self.__height * self.__width
