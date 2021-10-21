@@ -34,6 +34,9 @@ class TestBase(unittest.TestCase):
         self.assertEqual(Base.to_json_string(list_dict),
                          '[{"id": 8}, {"id": null}, {"id": 358}, {"id": -16}]')
         self.assertEqual(Base.to_json_string(None), "[]")
+        self.assertEqual(Base.to_json_string([]), "[]")
+        with self.assertRaises(TypeError):
+            Base.to_json_string()
 
     def test_from_json_string(self):
         """tests the from_json_string function"""
@@ -41,3 +44,7 @@ class TestBase(unittest.TestCase):
             [{'id': 8}, {'id': None}, {'id': 358}, {'id': -16}])
         self.assertEqual(Base.from_json_string(test_json),
                          [{"id": 8}, {"id": None}, {"id": 358}, {"id": -16}])
+        self.assertEqual(Base.from_json_string(None), [])
+        self.assertEqual(Base.from_json_string(""), [])
+        with self.assertRaises(TypeError):
+            Base.from_json_string()
