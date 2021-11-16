@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Finds States that contain 'a' using SQLAlchemy"""
+"""Finds specitfic State using SQLAlchemy"""
 from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker

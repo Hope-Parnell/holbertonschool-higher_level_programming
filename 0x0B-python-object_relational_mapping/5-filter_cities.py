@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module selects states from a database"""
+"""Module selects cities from a database with their state"""
 from sys import argv
 import MySQLdb
 

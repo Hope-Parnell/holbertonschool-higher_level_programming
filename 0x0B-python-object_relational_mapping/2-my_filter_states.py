@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module selects states  starting with 'N' from a database"""
+"""Module selects specific state from a database"""
 from sys import argv
 import MySQLdb
 
