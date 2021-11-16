@@ -13,9 +13,9 @@ if __name__ == "__main__":
                 WHERE states.name = %s ORDER BY cities.id ASC",
                 (argv[4], ))
     query_rows = cur.fetchall()
-    r = len(query_rows)
-    for i in range(r):
-        print(query_rows[i][0], end=", " if i < r - 1 else "")
-    print()
+    cities = []
+    for row in query_rows:
+        cities.append(row[0])
+    print(", ".join(cities))
     cur.close()
     db.close()
