@@ -15,6 +15,7 @@ if __name__ == "__main__":
     query_rows = cur.fetchall()
     r = len(query_rows)
     for i in range(r):
-        print(query_rows[i][0], end=", " if i < r - 1 else "\n")
+        print(query_rows[i][0], end=", " if i < r - 1 else "")
+    print()
     cur.close()
     db.close()
