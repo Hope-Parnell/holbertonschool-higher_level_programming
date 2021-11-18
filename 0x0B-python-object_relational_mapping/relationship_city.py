@@ -1,7 +1,11 @@
 #!/usr/bin/python3
 """Module contains the city class"""
 from sqlalchemy import Column, Integer, String, ForeignKey
-from model_state import Base
+from model_state import State
+from sqlalchemy.ext.declarative import declarative_base
+
+
+Base = declarative_base()
 
 
 class City(Base):
