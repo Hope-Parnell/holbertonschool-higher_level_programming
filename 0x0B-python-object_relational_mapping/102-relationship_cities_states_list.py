@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Prints citys with their state"""
 from relationship_city import City
 from relationship_state import Base, State
 from sqlalchemy import create_engine
