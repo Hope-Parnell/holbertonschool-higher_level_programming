@@ -15,9 +15,16 @@ if __name__ == "__main__":
     session = Session()
 
 
-    sf = City(name="San Francisco")
-    cali = State(name="California")
-    cali.cities.append(sf)
+    cali = session.query(State).filter(State.name == "California").first()
+    if not cali:
+        cali = State(name="California")
+    found = False
+    for city in cali.cities:
+        if city.name == "San Francisco":
+            found = True
+            break
+    if not found:
+        cali.cities.append(City(name="San Francisco"))
     session.add(cali)
     session.commit()
 
