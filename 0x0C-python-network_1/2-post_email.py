@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""takes a url and email from args to do a POST request"""
 import urllib.parse
 import urllib.request
 import sys
