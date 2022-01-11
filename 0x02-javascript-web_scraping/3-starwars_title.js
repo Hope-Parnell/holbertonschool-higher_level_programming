@@ -7,4 +7,4 @@ request.get(url, (err, respose, body) => {
   } else {
     console.log(JSON.parse(body).title);
   }
-})
+});
