@@ -8,7 +8,7 @@ request.get(url, (err, respose, body) => {
     const films = JSON.parse(body).results;
     let ct = 0;
     for (const film of films) {
-      for (const character of  film.characters) {
+      for (const character of film.characters) {
         if (character.includes('18')) { ct++; }
       }
     }
